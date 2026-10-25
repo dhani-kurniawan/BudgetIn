@@ -1,0 +1,290 @@
+/* ===========================================================
+   Budgetin — Design tokens
+   Palet diturunkan dari logo: navy (dompet), amber (koin),
+   hijau (tunas/pertumbuhan), di atas latar krem hangat.
+   =========================================================== */
+
+:root {
+  --navy-900: #13293f;
+  --navy-700: #1e3a5f;
+  --navy-500: #2d4a6b;
+  --navy-100: #e4ebf2;
+
+  --amber-600: #b45309;
+  --amber-500: #f59e0b;
+  --amber-100: #fef3d9;
+
+  --green-600: #0f7a5c;
+  --green-500: #10b981;
+  --green-100: #dcf5ec;
+
+  --red-600: #b42318;
+  --red-100: #fbe4e1;
+
+  --cream-100: #fbf7ee;
+  --cream-50: #fffdf8;
+  --paper: #ffffff;
+
+  --ink: #1f2a33;
+  --ink-soft: #5b6672;
+  --ink-faint: #8b93a0;
+  --line: #e7e1d3;
+
+  --font-display: "Sora", "Segoe UI", sans-serif;
+  --font-body: "Plus Jakarta Sans", "Segoe UI", sans-serif;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--cream-100);
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+#app {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  color: var(--navy-700);
+  margin: 0 0 0.4em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: 1.9rem;
+}
+h2 {
+  font-size: 1.3rem;
+}
+h3 {
+  font-size: 1.05rem;
+}
+
+p {
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+a {
+  color: var(--navy-700);
+}
+
+/* ---------- Form elements ---------- */
+input,
+select,
+textarea {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--paper);
+  color: var(--ink);
+  transition: border-color 0.15s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--navy-500);
+}
+
+label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--navy-700);
+  margin-bottom: 0.3rem;
+}
+
+button {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: transform 0.12s ease, opacity 0.12s ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: var(--navy-700);
+  color: var(--cream-50);
+  border: none;
+  padding: 0.75rem 1.2rem;
+}
+.btn-primary:hover {
+  background: var(--navy-900);
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1.5px solid var(--line);
+  color: var(--navy-700);
+  padding: 0.6rem 1rem;
+}
+.btn-ghost:hover {
+  border-color: var(--navy-500);
+}
+
+/* ---------- Shared surfaces ---------- */
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+}
+
+.error-text {
+  color: var(--red-600);
+  font-size: 0.85rem;
+  margin: 0.4rem 0 0;
+}
+
+/* ===========================================================
+   Layout & komponen bersama (responsif)
+   =========================================================== */
+
+.page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1.75rem 1.5rem 3rem;
+}
+
+.page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+.page-header h1 { margin-bottom: 0.15rem; }
+.page-header p { margin: 0; }
+
+.btn-primary,
+.btn-ghost,
+.btn-danger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  white-space: nowrap;
+}
+.btn-primary:disabled,
+.btn-ghost:disabled,
+.btn-danger:disabled { opacity: 0.55; cursor: not-allowed; }
+
+.btn-danger {
+  background: var(--red-600);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.2rem;
+}
+.btn-danger:hover { filter: brightness(0.92); }
+.btn-sm { padding: 0.45rem 0.8rem; font-size: 0.85rem; }
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1.5px solid var(--line);
+  background: var(--paper);
+  color: var(--ink-soft);
+  border-radius: var(--radius-sm);
+}
+.icon-btn:hover { color: var(--navy-700); border-color: var(--navy-500); }
+.icon-btn.danger:hover { color: var(--red-600); border-color: var(--red-600); background: var(--red-100); }
+.icon-btn svg { width: 17px; height: 17px; }
+
+.field { margin-bottom: 0.9rem; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.field-hint { font-size: 0.78rem; color: var(--ink-faint); margin: 0.3rem 0 0; }
+
+.chip {
+  display: inline-block;
+  padding: 0.18rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  background: var(--navy-100);
+  color: var(--navy-700);
+}
+.chip.green { background: var(--green-100); color: var(--green-600); }
+.chip.amber { background: var(--amber-100); color: var(--amber-600); }
+.chip.red { background: var(--red-100); color: var(--red-600); }
+
+.tabs {
+  display: inline-flex;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px;
+  gap: 2px;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.tabs button {
+  border: none;
+  background: transparent;
+  color: var(--ink-soft);
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+.tabs button.active { background: var(--navy-700); color: var(--cream-50); }
+
+.empty-text { color: var(--ink-faint); font-size: 0.9rem; }
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  transform: translateX(-50%);
+  background: var(--navy-900);
+  color: var(--cream-50);
+  padding: 0.7rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  z-index: 200;
+  box-shadow: 0 8px 24px rgba(19, 41, 63, 0.25);
+  max-width: calc(100vw - 2rem);
+}
+.toast.error { background: var(--red-600); }
+
+@media (max-width: 720px) {
+  .page { padding: 1.1rem 1rem 2.5rem; }
+  h1 { font-size: 1.5rem; }
+  .field-row { grid-template-columns: 1fr; gap: 0; }
+}
+
+.success-text {
+  color: var(--green-600);
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-top: 0.75rem;
+}
